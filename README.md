@@ -1,2 +1,2 @@
-# asteroidsurfer
+# Asteroid Surfer
 Personal website
