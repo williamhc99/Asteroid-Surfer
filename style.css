@@ -1,0 +1,138 @@
+.dragme {
+	position: relative;
+	cursor: move;
+	max-width: 270px;
+	/* border: 3px solid white; */
+}
+#welcome {
+	background-color: transparent;
+	color: white;
+	text-align: center;
+	top: 20%;
+	left: 0%;
+	/* margin-top: -50px;
+	margin-left: -50px; */
+}
+
+#surfer {
+	top: 350px;
+	left: 500px;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+}
+
+.dragme .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+}
+
+.dragme:hover .tooltiptext {
+	visibility: visible;
+}
+
+.tabcontent {
+	background-image: url("pixelSpace.png");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	display: none;
+	padding: 100px 20px;
+	z-index: -1;
+}
+
+.gamespace {
+	z-index: 3;
+}
+.navbar {
+	position: fixed;
+	margin-bottom: 0;
+	background: transparent;
+	z-index: 9999;
+	font-size: 12px !important;
+	line-height: 1.42857143 !important;
+	letter-spacing: 4px;
+	right: 0px;
+}
+.tablink {
+	background: transparent;
+	color: white;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 5% 20px;
+	font-size: 17px;
+}
+
+.tablink:hover {
+	background: gray;
+}
+
+.jumbotron {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding-left: 50px;
+	padding-right: 50px;
+	color: #ffffff;
+	background: rgb(200, 54, 54); /* This is for ie8 and below */
+	background: rgba(255, 127, 36, 0);
+}
+
+.canvas {
+	border: 1px solid #d3d3d3;
+	background-color: #f1f1f1;
+}
+
+.contact {
+	position: absolute;
+	top: 92.5%;
+	left: 2.5%;
+	background: rgb(200, 127, 36); /* This is for ie8 and below */
+	background: rgba(255, 127, 36, 0);
+	color: white;
+	padding: 5px 20px;
+	z-index: 2;
+}
+
+.row {
+	font-size: 15px;
+	padding: 30px;
+}
+
+.fa {
+	color: black;
+	margin: 0px 15px 0px 0px;
+}
+
+.button {
+	color: black;
+}
+
+body,
+html {
+	height: 100%;
+	margin: 0;
+	background: black url("asteroid_field.jpg");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* padding: 100px 20px; */
+	z-index: -1;
+}
