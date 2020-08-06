@@ -25,7 +25,6 @@ function startDrag(e) {
 	offsetY = e.clientY;
 
 	var pos = targ.getBoundingClientRect();
-	// console.log(rect.top, rect.right, rect.bottom, rect.left);
 
 	// assign default values for top and left properties
 	if (!targ.style.left) {
@@ -45,6 +44,7 @@ function startDrag(e) {
 	document.onmousemove = dragDiv;
 	return false;
 }
+
 function dragDiv(e) {
 	if (!drag) {
 		return;
@@ -57,15 +57,20 @@ function dragDiv(e) {
 	targ.style.top = coordY + e.clientY - offsetY + "px";
 	return false;
 }
+
 function stopDrag() {
 	drag = false;
 }
 
-MAXZ = 1;
-window.onload = function () {
-	document.onmousedown = startDrag;
-	document.onmouseup = stopDrag;
-};
+function initalizeItems() {
+	surfer = document.getElementById("surfer");
+	surfer.style.left = "1000px";
+	surfer.style.top = "200px";
+
+	feelfree = document.getElementById("feelfree");
+	feelfree.style.left = "350px";
+	feelfree.style.top = "100px";
+}
 
 $(document).ready(function () {
 	setTimeout(function () {
@@ -73,3 +78,12 @@ $(document).ready(function () {
 		$("h1").css("color", "#222222");
 	}, 500);
 });
+
+initalizeItems();
+
+MAXZ = 1;
+
+window.onload = function () {
+	document.onmousedown = startDrag;
+	document.onmouseup = stopDrag;
+};
