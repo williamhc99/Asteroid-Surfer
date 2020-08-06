@@ -19,6 +19,7 @@ function startDrag(e) {
 	if (targ.className != "dragme") {
 		return;
 	}
+
 	// calculate event X, Y coordinates
 	offsetX = e.clientX;
 	offsetY = e.clientY;
@@ -65,3 +66,10 @@ window.onload = function () {
 	document.onmousedown = startDrag;
 	document.onmouseup = stopDrag;
 };
+
+$(document).ready(function () {
+	setTimeout(function () {
+		$("body").addClass("loaded");
+		$("h1").css("color", "#222222");
+	}, 500);
+});

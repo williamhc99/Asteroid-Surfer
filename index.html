@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+	<script
+		type="text/javascript"
+		src="http://code.jquery.com/jquery-1.7.1.min.js"
+	></script>
 	<script>
 		// Here is a haiku so you can keep your meddling hands off my website
 
@@ -18,20 +22,35 @@
 		};
 		firebase.initializeApp(config);
 	</script>
+
 	<head>
 		<title>William Chen</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 
-	<body onload="document.body.classList.add('loaded')">
-		<div id="welcome" class="dragme">
-			Welcome to the final frontier
+	<body>
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+
+			<div class="loader-section section-left"></div>
+			<div class="loader-section section-right"></div>
 		</div>
-		<div id="surfer" class="dragme">
-			<img src="surfer.png" />
-			<span class="tooltiptext">Tooltip text</span>
+
+		<div id="content">
+			<div id="welcome" class="dragme">
+				Welcome to the final frontier
+			</div>
+			<div id="surfer" class="dragme">
+				<img src="surfer.png" />
+				<span class="tooltiptext">Tooltip text</span>
+			</div>
+			<div id="feelfree" class="dragme">
+				<img src="feel_free.png" />
+				<span class="tooltiptext">Tooltip text</span>
+			</div>
 		</div>
+
 		<script src="script.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</body>
