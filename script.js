@@ -14,9 +14,11 @@ function startDrag(e) {
 
 	console.log(targ);
 
-	targ.style.zIndex = MAXZ++;
+	if (targ.id != "ufo") {
+		targ.style.zIndex = MAXZ++;
+	}
 
-	if (targ.className != "dragme") {
+	if (!targ.className.includes("dragme")) {
 		return;
 	}
 
@@ -65,11 +67,11 @@ function stopDrag() {
 function initalizeItems() {
 	surfer = document.getElementById("surfer");
 	surfer.style.left = "1000px";
-	surfer.style.top = "200px";
+	surfer.style.top = "350px";
 
-	feelfree = document.getElementById("feelfree");
-	feelfree.style.left = "350px";
-	feelfree.style.top = "100px";
+	// feelfree = document.getElementById("feelfree");
+	// feelfree.style.left = "350px";
+	// feelfree.style.top = "100px";
 }
 
 $(document).ready(function () {
@@ -86,4 +88,6 @@ MAXZ = 1;
 window.onload = function () {
 	document.onmousedown = startDrag;
 	document.onmouseup = stopDrag;
+	document.ontouchstart = startDrag;
+	document.ontouchend = stopDrag;
 };

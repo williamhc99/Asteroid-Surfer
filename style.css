@@ -1,20 +1,76 @@
 .dragme {
 	position: relative;
 	cursor: move;
-	max-width: 270px;
+	width: 270px;
+}
+
+.textbox {
+	display: inline-block;
+	overflow: hidden;
+	padding: 10px;
+	font-family: "Press Start 2P";
+	font-size: 12px;
+	color: #f0efb7;
+	--inner: #290829;
+	--border: #6bd6bd;
+	--accent: #6bd6bd;
+	text-align: center;
+}
+
+/* PIXEL BORDER - originally designed by https://codepen.io/fallwestmike*/
+.pxl-border {
+	transform: translateZ(0);
+	background: var(--inner);
+	box-shadow:
+	  /* Inner Background Color -- Same as inner */ 0 -6px 0 -2px
+			var(--inner),
+		0 6px 0 -2px var(--inner), 0 -12px 0 -4px var(--inner),
+		0 12px 0 -4px var(--inner), 0 -18px 0 -8px var(--inner),
+		0 18px 0 -8px var(--inner), 0 -24px 0 -12px var(--inner),
+		0 24px 0 -12px var(--inner), /* Inner Border */ -2px 0 0 0 var(--border),
+		2px 0 0 0 var(--border), 0 -4px 0 0 var(--border), 0 4px 0 0 var(--border),
+		0 -10px 0 -2px var(--border), 0 10px 0 -2px var(--border),
+		0 -14px 0 -4px var(--border), 0 14px 0 -4px var(--border),
+		0 -20px 0 -8px var(--border), 0 20px 0 -8px var(--border),
+		0 -26px 0 -12px var(--border), 0 26px 0 -12px var(--border),
+		/* Middle Border -- Accent */ -4px 0 0 0 var(--accent),
+		4px 0 0 0 var(--accent), 0 -2px 0 2px var(--accent),
+		0 2px 0 2px var(--accent), 0 -8px 0 0px var(--accent),
+		0 8px 0 0px var(--accent), 0 -12px 0 -2px var(--accent),
+		0 12px 0 -2px var(--accent), 0 -16px 0 -4px var(--accent),
+		0 16px 0 -4px var(--accent), 0 -22px 0 -8px var(--accent),
+		0 22px 0 -8px var(--accent), 0 -28px 0 -12px var(--accent),
+		0 28px 0 -12px var(--accent), /* Outer Border */ -6px 0 0 0 var(--border),
+		6px 0 0 0 var(--border), 0 0 0 4px var(--border), 0 -6px 0 2px var(--border),
+		0 6px 0 2px var(--border), 0 -10px 0 0 var(--border),
+		0 10px 0 0 var(--border), 0 -14px 0 -2px var(--border),
+		0 14px 0 -2px var(--border), 0 -18px 0 -4px var(--border),
+		0 18px 0 -4px var(--border), 0 -24px 0 -8px var(--border),
+		0 24px 0 -8px var(--border), 0 -30px 0 -12px var(--border),
+		0 30px 0 -12px var(--border);
 }
 
 #welcome {
-	background-color: transparent;
-	color: white;
-	text-align: center;
-	top: 400px;
-	left: 50%;
+	top: 85%;
+	left: 5%;
+	overflow: hidden;
+	position: absolute;
+	width: 550px;
+	line-height: 15pt;
 }
 
 #surfer {
 	top: 350px;
 	left: 500px;
+}
+
+#sign {
+	font-family: "Playfair Display SC";
+	font-size: 50px;
+	color: #ff9933;
+	position: absolute;
+	top: 5%;
+	left: 40%;
 }
 
 #feelfree {
@@ -154,8 +210,8 @@
 	-ms-transform: translateX(-100%); /* IE 9 */
 	transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
 
-	-webkit-transition: all 0.35s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
-	transition: all 0.35s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .loaded #loader-wrapper .loader-section.section-right {
@@ -163,8 +219,8 @@
 	-ms-transform: translateX(100%); /* IE 9 */
 	transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
 
-	-webkit-transition: all 0.35s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
-	transition: all 0.35s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-webkit-transition: all0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .loaded #loader {
@@ -179,8 +235,8 @@
 	-ms-transform: translateY(-100%); /* IE 9 */
 	transform: translateY(-100%); /* Firefox 16+, IE 10+, Opera */
 
-	-webkit-transition: all 0.3s 0.5s ease-out;
-	transition: all 0.3s 0.5s ease-out;
+	-webkit-transition: all 0.3s 1s ease-out;
+	transition: all 0.3s 1s ease-out;
 }
 
 /* JavaScript Turned Off */
@@ -289,4 +345,5 @@ html {
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: -1;
+	overflow: hidden;
 }
