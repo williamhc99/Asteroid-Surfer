@@ -1,6 +1,6 @@
 .dragme {
-	position: relative;
-	cursor: move;
+	position: absolute;
+	cursor: grab;
 	width: 270px;
 }
 
@@ -50,6 +50,13 @@
 		0 30px 0 -12px var(--border);
 }
 
+/* #desc {
+	display: hidden;
+	color: white;
+	right: 0px;
+	position: absolute;
+} */
+
 #welcome {
 	top: 85%;
 	left: 5%;
@@ -79,29 +86,47 @@
 	width: 239px;
 }
 
-.tooltip {
+.desc {
 	position: relative;
-	display: inline-block;
-	border-bottom: 1px dotted black;
+	display: grid;
+	/* border-bottom: 1px dotted black; */
 }
 
-.dragme .tooltiptext {
+.desctriangle {
+	position: absolute;
 	visibility: hidden;
-	width: 120px;
-	background-color: black;
+	background: transparent;
+	left: 285px;
+	top: -95px;
+
+	width: 0;
+	height: 0;
+	border-top: 200px solid transparent;
+	border-bottom: 500px solid transparent;
+	border-right: 300px solid rgba(173, 216, 230, 0.3) !important;
+	border-right: 300px solid rgb(173, 216, 230);
+
+	-webkit-background-clip: padding-box; /* for Safari */
+	background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.desctext {
+	visibility: hidden;
+	/* width: 120px; */
+	background: transparent;
 	color: #fff;
 	text-align: center;
-	border-radius: 6px;
-	padding: 5px 0;
-
-	/* Position the tooltip */
+	/* border-radius: 6px; */
+	/* padding: 5px 0; */
 	position: absolute;
-	z-index: 1;
+	z-index: 1000;
+	left: 586px;
+	top: -97px;
 }
 
-.dragme:hover .tooltiptext {
+/* .dragme:hover .tooltiptext {
 	visibility: visible;
-}
+} */
 
 #loader-wrapper {
 	position: fixed;

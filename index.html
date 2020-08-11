@@ -38,24 +38,29 @@
 		</div>
 
 		<div id="content">
-			<div id="sign">
+			<!-- FIXED COMPONENTS -->
+			<!-- <div id="sign">
 				W I L L I A M // C H E N
-			</div>
+			</div> -->
 			<div id="welcome" class="pxl-border textbox">
 				Click and drag things to the UFO Scanner. Or drag the UFO Scanner on top
 				of things. Its up to you. Thanks for visiting and explore!
 			</div>
 
+			<!-- DRAGGABLE COMPONENTS -->
 			<div id="surfer" class="dragme">
 				<img src="surfer1.png" />
 			</div>
-			<div id="ufo" class="dragme">
-				<img src="ufo1.png" />
+
+			<!-- UFO COMPONENT -->
+			<div id="ufo" class="tooltip dragme">
+				<img src="ufo1.png" style="opacity: 0.9;" />
+				<div id="tri" class="desctriangle"></div>
+				<!-- DESC COMPONENTS -->
+				<div id="surfer-desc" class="desctext">
+					what up my homie
+				</div>
 			</div>
-			<!-- <div id="feelfree" class="dragme">
-				<img src="feel_free.png" />
-				<span class="tooltiptext">Tooltip text</span>
-			</div> -->
 		</div>
 
 		<script src="script.js"></script>

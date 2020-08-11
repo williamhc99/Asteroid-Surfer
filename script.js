@@ -1,3 +1,15 @@
+function withinUFOScanner(targ) {
+	let rect1 = ufo.getBoundingClientRect();
+	let rect2 = targ.getBoundingClientRect();
+	let overlap = !(
+		rect1.right < rect2.left ||
+		rect1.left > rect2.right ||
+		rect1.bottom < rect2.top ||
+		rect1.top > rect2.bottom
+	);
+	return overlap;
+}
+
 function startDrag(e) {
 	// determine event object
 	if (!e) {
@@ -57,6 +69,19 @@ function dragDiv(e) {
 	// move div element
 	targ.style.left = coordX + e.clientX - offsetX + "px";
 	targ.style.top = coordY + e.clientY - offsetY + "px";
+
+	if (targ.id != "ufo") {
+		let desc = document.getElementById(targ.id.concat("-desc"));
+		if (withinUFOScanner(targ)) {
+			desc.style.visibility = "visible";
+			tri.style.visibility = "visible";
+			console.log("OVERLAP BABYYY");
+		} else {
+			desc.style.visibility = "hidden";
+			tri.style.visibility = "hidden";
+		}
+	}
+
 	return false;
 }
 
@@ -84,6 +109,8 @@ $(document).ready(function () {
 initalizeItems();
 
 MAXZ = 1;
+var ufo = document.getElementById("ufo");
+var tri = document.getElementById("tri");
 
 window.onload = function () {
 	document.onmousedown = startDrag;
